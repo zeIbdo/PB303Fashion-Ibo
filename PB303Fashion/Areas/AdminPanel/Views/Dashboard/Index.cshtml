@@ -1,0 +1,38 @@
+﻿@model List<Category>
+
+@{
+    ViewData["Title"] = "Index";
+    var categories = Model;
+}
+
+
+<div class="col-lg-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Categories Table</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Category</th>
+                            <th>Img</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in categories)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>@item.Name</td>
+                                <td>
+                                    <img src="~/assets/svg/fashion/@item.ImageUrl" alt="#" />
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
